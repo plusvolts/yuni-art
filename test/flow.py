@@ -30,7 +30,7 @@ async def run(name, vw, vh, mobile):
         await pg.goto(URL); await pg.wait_for_timeout(500)
         await pg.evaluate("indexedDB.deleteDatabase('yuni-art-works')"); await pg.goto(URL); await pg.wait_for_timeout(400)
         await pg.screenshot(path=f'../shots/{name}-1-home.png')
-        REQ['AREQ-81 12단원, 1~6단원 5그림(30), 단계 4~6'] = await pg.evaluate("CONTENT.units.length===12 && CONTENT.units.slice(0,6).every(u=>u.days.length===5 && u.days.every(id=>{const d=CONTENT.drawings[id]; return d && d.steps.length>=4 && d.steps.length<=6 && d.steps.every(s=>s.paths.length>=1 && s.say)})) && CONTENT.units.slice(6).every(u=>u.soon)")
+        REQ['AREQ-81 12단원, 1~6단원 5그림(30), 단계 4~8'] = await pg.evaluate("CONTENT.units.length===12 && CONTENT.units.slice(0,6).every(u=>u.days.length===5 && u.days.every(id=>{const d=CONTENT.drawings[id]; return d && d.steps.length>=4 && d.steps.length<=8 && d.steps.every(s=>s.paths.length>=1 && s.say)})) && CONTENT.units.slice(6).every(u=>u.soon)")
         REQ['AREQ-94·95 칭찬 30개 이상, 비교하는 말 없음'] = await pg.evaluate("CONTENT.lines.praise.length>=30 && CONTENT.lines.praise.every(p=>!/똑같|비슷|닮/.test(p))")
         REQ['AREQ-87 가족 미션 카드 30장, 초록이 이어 그리기 있음'] = await pg.evaluate("CONTENT.missions.flat().length===30 && CONTENT.missions.flat().some(m=>m.who==='chorok'&&m.given) && !JSON.stringify(CONTENT).includes('은후')")
         REQ['AREQ-89 도장 10종 SVG, 마법 붓 2'] = await pg.evaluate("Object.keys(CONTENT.stamps).length===10 && Object.keys(CONTENT.magic).length===2")

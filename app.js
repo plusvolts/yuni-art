@@ -1,7 +1,7 @@
 /* 윤이 미술 — 앱 로직 (의존성 없음). 블록 앱 v1.2.0의 공통 블록(아빠 화면 암호·통계·탭, 별 award(), 보상, 저장·백업, 업데이트, 한국어 녹음 ko())을 복사하고 학습 흐름만 미술로 만들었어요. */
 (() => {
   'use strict';
-  const APP_VERSION = '1.0.0';
+  const APP_VERSION = '1.0.1';
   const C = window.CONTENT; const DR = window.DRAW; const ST = window.STORE; const D = C.drawings;
   const U = C.units;
   const DAYS = 5;
